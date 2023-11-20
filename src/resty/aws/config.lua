@@ -70,7 +70,7 @@ local pl_config = require "pl.config"
 -- environment variable name (in all-caps).
 local env_vars = {
   -- configuration files and settings
-  AWS_CONFIG_FILE = { name = "AWS_CONFIG_FILE", default = "~/.aws/config" },
+  AWS_CONFIG_FILE = { name = "AWS_CONFIG_FILE", default = os.getenv("HOME") .. "/.aws/config" },
   AWS_PROFILE = { name = "AWS_PROFILE", default = "default" },
 
   -- region configuration
@@ -91,7 +91,7 @@ local env_vars = {
   AWS_ACCESS_KEY_ID = { name = "aws_access_key_id", default = nil },
   AWS_SECRET_ACCESS_KEY = { name = "aws_secret_access_key", default = nil },
   AWS_SESSION_TOKEN = { name = "aws_session_token", default = nil },
-  AWS_SHARED_CREDENTIALS_FILE = { name = "AWS_SHARED_CREDENTIALS_FILE", default = "~/.aws/credentials" },
+  AWS_SHARED_CREDENTIALS_FILE = { name = "AWS_SHARED_CREDENTIALS_FILE", default = os.getenv("HOME") .. "/.aws/credentials" },
 
   -- Misc
   AWS_EC2_METADATA_DISABLED = { name = "AWS_EC2_METADATA_DISABLED", default = "false" },
